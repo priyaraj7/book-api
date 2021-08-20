@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- //get method -->
+    <form action="/search" method="GET">
+      Query: <input type="text" name="query" /> <br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- post method -->
+    <form action="/add" method="POST">
+      Title: <input type="text" name="title" /> <br />
+      Author: <input type="text" name="author" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <h2> Books</h2>
+    <% if (books.length > 0) { %>
+    <ul>
+      <% for(let i=0; i<books.length; i++) {%>
+        <li>
+          Name:  <%= books[i].title %> <br />
+          Author: <%= books[i].author %> <br />
+      </li>
+      <% } %>
+
+
+    </ul>
+    <% } else { %>
+      No books
+    <% } %>
+
+  </body>
+</html>
+
+
+<!-- http://127.0.0.1:8081/index.htm -->
